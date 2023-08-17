@@ -1,0 +1,81 @@
+ <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+
+        <div>
+
+            <label for="title">Title: </label>
+            <input type="text" name="campground[title]" id="title" value="<%= campground.title %>">
+
+        </div>
+
+        <div>
+
+            <label for="location">Location: </label>
+            <input type="text" name="campground[location]" id="location" value="<%= campground.location %>">
+
+        </div>
+
+        <button>Edit Campground</button>
+
+    </form>
+    <a href="/campgrounds">All Campground</a>
+
+
+
+
+Therefore, make sure to update your /logout route in the routes/users.js code so it looks like this:
+
+router.get('/logout', (req, res, next) => {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+        req.flash('success', 'Goodbye!');
+        res.redirect('/campgrounds');
+    });
+}); 
+
+
+
+
+router.post('/login',storeReturnTo,passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), users.login);
+
+
+
+
+{
+  "_id": {
+    "$oid": "64ab0e6694345313c1783ed4"
+  },
+  "title": "Taj hotel",
+  "price": 8000,
+  "description": "sddsd",
+  "location": "poabola, india",
+  "reviews": [],
+  "images": [
+    {
+      "url": "https://res.cloudinary.com/dztrkupjm/image/upload/v1688931958/YelpCamp/bz2yjffge9ezc7apgfh4.jpg",
+      "filename": "YelpCamp/bz2yjffge9ezc7apgfh4",
+      "_id": {
+        "$oid": "64ab0e6694345313c1783ed5"
+      }
+    },
+    {
+      "url": "https://res.cloudinary.com/dztrkupjm/image/upload/v1688931958/YelpCamp/ypvhhycgbfrro3p7pf1n.jpg",
+      "filename": "YelpCamp/ypvhhycgbfrro3p7pf1n",
+      "_id": {
+        "$oid": "64ab0e6694345313c1783ed6"
+      }
+    },
+    {
+      "url": "https://res.cloudinary.com/dztrkupjm/image/upload/v1688931959/YelpCamp/nttxl5wxgmfpanatqyon.jpg",
+      "filename": "YelpCamp/nttxl5wxgmfpanatqyon",
+      "_id": {
+        "$oid": "64ab0e6694345313c1783ed7"
+      }
+    }
+  ],
+  "author": {
+    "$oid": "64a2d920c7d0fa0641ac4c63"
+  },
+  "__v": 0
+}
